@@ -1,25 +1,9 @@
-<h1>Listing items</h1>
+<h1>My Aha! Moments</h1>
 
-<table>
-  <tr>
-    <th>Description</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.description %></li>
+  <% end %>
+</ul>
 
-<% @items.each do |item| %>
-  <tr>
-    <td><%= item.description %></td>
-    <td><%= item.user_id %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Item', new_item_path %>
+<p><%= link_to 'New Item', new_item_path %></p>
