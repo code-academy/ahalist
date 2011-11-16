@@ -1,9 +1,10 @@
 <h1>My Aha! Moments</h1>
 
-<ul>
+<%= render 'form' %>
+
+<ul id="ahas">
   <% @items.each do |item| %>
     <li><%= item.description %></li>
   <% end %>
 </ul>
 
-<p><%= link_to 'New Item', new_item_path %></p>
