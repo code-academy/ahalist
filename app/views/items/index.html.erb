@@ -1,10 +1,13 @@
 <h1>My Aha! Moments</h1>
 
-<%= render 'form' %>
-
 <ul id="ahas">
   <% @items.each do |item| %>
-    <li><%= item.description %></li>
+    <li><%= item.description %> 
+        <%= link_to "Delete", item_url(item), :method => :delete %>
+    </li>
   <% end %>
 </ul>
+
+<%= render 'form' %>
+
 
