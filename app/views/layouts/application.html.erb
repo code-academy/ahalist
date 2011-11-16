@@ -8,13 +8,16 @@
 </head>
 <body>
 
+<div id="header">
+  <h1>Aha!List</h1>
+  <% if session[:uid] %>
+    <p><%= link_to "Sign Out", signout_url %></p>
+    <% else %>
+    <p><%= link_to "Sign In", signin_url %></p>
+  <% end %>
+</div>
 <p><%= notice %></p>
 
-<% if session[:uid] %>
-  <p><%= link_to "Sign Out", signout_url %></p>
-  <% else %>
-  <p><%= link_to "Sign In", signin_url %></p>
-<% end %>
 
 <%= yield %>
 

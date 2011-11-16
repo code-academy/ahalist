@@ -1,16 +1,5 @@
 class ItemsController < ApplicationController
   
-  before_filter :require_user
-  
-  def require_user
-    if session[:uid].blank?
-      redirect_to root_url, :notice => "Please sign in first."
-      return
-    end
-    
-    @user = User.find(session[:uid])
-  end
-  
   # GET /items
   # GET /items.json
   def index

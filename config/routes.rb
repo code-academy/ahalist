@@ -1,19 +1,18 @@
 Ahalist::Application.routes.draw do
 
+  root :to => 'items#index'
+
   resources :items
 
   get "sessions/new", :as => :signin
   post "sessions/create"
-
   get "sessions/destroy", :as => :signout
 
   resources :users
 
   get "pages/home"
-
   get "pages/about"
   
-  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
