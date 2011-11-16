@@ -1,4 +1,12 @@
 Ahalist::Application.routes.draw do
+
+  resources :items
+
+  get "sessions/new", :as => :signin
+  post "sessions/create"
+
+  get "sessions/destroy", :as => :signout
+
   resources :users
 
   get "pages/home"
