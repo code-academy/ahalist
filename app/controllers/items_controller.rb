@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = @user.items
     @item = Item.new
 
     respond_to do |format|
@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id])
+    @item = @user.items.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -82,6 +82,7 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
+      format.js
       format.html { redirect_to items_url }
       format.json { head :ok }
     end

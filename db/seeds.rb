@@ -8,4 +8,5 @@
 
 User.destroy_all
 User.create :email => "cookie@codeacademy.org", :password => "cookies", :password_confirmation => "cookies"
+User.create :email => "jeff@codeacademy.org", :password => "cookies", :password_confirmation => "cookies"
 
