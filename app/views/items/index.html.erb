@@ -2,7 +2,7 @@
 
 <ul id="ahas">
   <% @items.each do |item| %>
-    <%= render item %>
+    <li id="<%= dom_id(item) %>"><%= item.description %> <%= link_to "Toast", item_url(item), :method => :delete, :remote => true %></li>
   <% end %>
 </ul>
 
